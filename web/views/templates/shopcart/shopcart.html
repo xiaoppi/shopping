@@ -3,10 +3,15 @@
 </ion-header-bar>
 <ion-content class="shopcart">
 	<ion-list>
-		<ion-item class="item-thumbnail-left">
-			<img src="/images/maojin.png" />
-      <h2>Pretty Hate Machine</h2>
-      <p>Nine Inch Nails</p>
+		<ion-item class="item-thumbnail-left" ng-repeat="item in data" ng-click="goPage('settle',{id:item.cartid})">
+			<img ng-src="{{item.imgUrl}}" />
+      <h2>{{item.pname}}</h2>
+      <p>
+      	<span class="padding-right">单价 {{item.price}}</span>
+      	<span class="padding-right">数量 {{item.count}}</span>
+      	<span class="assertive">总金额 {{item.price * item.count}}</span>
+      </p>
+      <p>{{item.cartTime}}</p>
 		</ion-item>
 	</ion-list>
 </ion-content>

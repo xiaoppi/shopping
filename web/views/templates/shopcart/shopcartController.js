@@ -1,8 +1,8 @@
 angular.module('app')
-	.controller('shopcartController', ['$scope', 'API', 'utils', function ($scope, API, utils) {
+	.controller('shopcartController', ['$rootScope', '$scope', 'API', 'utils', function ($rootScope, $scope, API, utils) {
 
 		utils.tips.showLoadTips();
-		API.fetchGet('/main/shopcart/123@qq.com', {email: '123@qq.com'})
+		API.fetchGet('/main/shopcart/' + $rootScope.user.uid, $rootScope.user)
 			.then(function (data) {
 				console.log('data ==> ', data);
 				$scope.data = data.data;
