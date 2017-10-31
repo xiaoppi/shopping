@@ -121,12 +121,50 @@ class RoutesController {
 	settleController (req, res) {
 		let settlesql = SQL.findAllForSettle(req.query.id);
 		service.query(settlesql)
-		  .then((result)=>{
-            res.send(result);
-		  })
-		  .catch((err)=>{
-               res.send(err);
-		  })
+			.then((result) => {
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	postSettleController (req, res) {
+		console.log('req.body ==> ', req.body);
+		let settlesql = SQL.updateOneForShopcart(req.body);
+		console.log('settlesql ==> ', settlesql);
+		service.query(settlesql)
+			.then((result) => {
+				res.json({msg: '结算成功'});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	myController (req, res) {
+		let myingsql = SQL.findAllForSettleBuy(req.query);
+		service.query(myingsql)
+			.then((result) => {
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	myorderController (req, res) {
+		let myordersql = SQL.findAllForSettleOrder(req.query);
+		service.query(myordersql)
+			.then((result) => {
+				result.forEach((v) => {
+					v.buyTime = moment(v.buyTime).format('YYYY-MM-DD');
+				});
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
 	}
 
 }

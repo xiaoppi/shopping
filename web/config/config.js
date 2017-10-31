@@ -46,12 +46,11 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 				'/templates/shopcart/shopcart.css'
 		 			]
 		 		},
-
 		 		{
-		 			name: 'main.home',
+		 			name: 'main.my',
 		 			files: [
-		 				'/templates/home/homeController.js',
-		 				'/templates/home/home.css'
+		 				'/templates/my/myController.js',
+		 				'/templates/my/my.css'
 		 			]
 		 		},
 		 		{
@@ -73,6 +72,13 @@ app.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvi
 		 			files: [
 		 				'/templates/settle/settleController.js',
 		 				'/templates/settle/settle.css'
+		 			]
+		 		},
+		 		{
+		 			name: 'myorder',
+		 			files: [
+		 				'/templates/myorder/myorderController.js',
+		 				'/templates/myorder/myorder.css'
 		 			]
 		 		}
 
