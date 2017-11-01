@@ -130,9 +130,7 @@ class RoutesController {
 	}
 
 	postSettleController (req, res) {
-		console.log('req.body ==> ', req.body);
 		let settlesql = SQL.updateOneForShopcart(req.body);
-		console.log('settlesql ==> ', settlesql);
 		service.query(settlesql)
 			.then((result) => {
 				res.json({msg: '结算成功'});
@@ -160,6 +158,39 @@ class RoutesController {
 				result.forEach((v) => {
 					v.buyTime = moment(v.buyTime).format('YYYY-MM-DD');
 				});
+				res.send(result);
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	updatecommentController (req, res) {
+		let commentsql = SQL.insertOneForComment(req.body);
+		service.query(commentsql)
+			.then((result) => {
+				res.json({"msg": "评论成功"});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	updateshopcartController (req, res) {
+		let shopcartsql = SQL.updateOneForShopcartComment(req.body);
+		service.query(shopcartsql)
+			.then((result) => {
+				res.json({"msg": "评论成功"});
+			})
+			.catch((err) => {
+				res.send(err);
+			})
+	}
+
+	searchController (req, res) {
+		let searchsql = SQL.searchAllForWord(req.query);
+		service.query(searchsql)
+			.then((result) => {
 				res.send(result);
 			})
 			.catch((err) => {
