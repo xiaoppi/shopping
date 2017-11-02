@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-11-01 17:47:01
+Date: 2017-11-02 18:13:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,7 @@ CREATE TABLE `t_shopcart` (
   `statusCode` int(11) NOT NULL,
   `commentStatus` int(11) DEFAULT NULL,
   PRIMARY KEY (`cartid`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_shopcart
@@ -50,3 +50,5 @@ INSERT INTO `t_shopcart` VALUES ('00000000013', '/images/maojin.png', '柔软毛
 INSERT INTO `t_shopcart` VALUES ('00000000014', '/images/zhentou.png', '舒适枕头', '55.00', '3', '123@qq.com', 'nickname', '2017-10-31 14:25:17', null, '1', '0', null);
 INSERT INTO `t_shopcart` VALUES ('00000000015', '/images/zhentou.png', '舒适枕头', '55.00', '7', '123@qq.com', 'nickname', '2017-11-01 17:31:54', null, '1', '0', null);
 INSERT INTO `t_shopcart` VALUES ('00000000016', '/images/baozhen.png', '抱枕', '25.00', '1', '123@qq.com', 'nickname', '2017-11-01 17:32:58', null, '3', '0', null);
+INSERT INTO `t_shopcart` VALUES ('00000000017', '/images/maojin.png', '柔软毛巾', '13.00', '45', '1234@qq.com', 'qie', '2017-11-02 15:04:35', '2017-11-02 15:04:40', '2', '1', '1');
+INSERT INTO `t_shopcart` VALUES ('00000000018', '/images/baozhen.png', '大大的枕头', '35.00', '1', '1234@qq.com', 'qie', '2017-11-02 15:19:22', '2017-11-02 15:19:27', '4', '1', '1');

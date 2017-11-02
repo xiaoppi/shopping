@@ -21,13 +21,14 @@
     "url": "https://github.com/xiaoppi/shopping/issues"
   },
   "homepage": "https://github.com/xiaoppi/shopping#readme",
-  "devDependencies":{
+  "devDependencies": {
     "body-parser": "^1.18.2",
     "crypto": "^1.0.1",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "moment": "^2.19.1",
     "mysql": "^2.15.0",
+    "nodemailer": "^4.3.1",
     "q": "^1.5.1",
     "serve-favicon": "^2.4.5"
   }

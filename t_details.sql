@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-11-01 17:46:48
+Date: 2017-11-02 18:13:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `t_details` (
   `notike` varchar(255) DEFAULT NULL,
   `pid` int(11) NOT NULL,
   PRIMARY KEY (`did`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_details
@@ -39,3 +39,4 @@ CREATE TABLE `t_details` (
 INSERT INTO `t_details` VALUES ('1', '舒适枕头', '55.00', '有枕头好梦', '/images/zhentou.png', '2', '60', '15', '88', '1');
 INSERT INTO `t_details` VALUES ('2', '柔软毛巾', '13.00', '舒服', '/images/maojin.png', '21', '136', '11', '11', '2');
 INSERT INTO `t_details` VALUES ('3', '抱枕', '25.00', '大大的', '/images/baozhen.png', '35', '45', '44', '8', '3');
+INSERT INTO `t_details` VALUES ('4', '大大的枕头', '35.00', '够大', '/images/baozhen.png', '55', '74', '8', '5', '4');

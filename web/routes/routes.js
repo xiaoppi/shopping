@@ -108,12 +108,22 @@ angular.module('app')
 				}
 			})
 			.state('search', {
-				url: '/myorder',
+				url: '/search',
 				templateUrl: '/templates/search/search.html',
 				controller: 'searchController',
 				resolve: {
 					des: ['$ocLazyLoad', function ($ocLazyLoad) {
 						return $ocLazyLoad.load('search');
+					}]
+				}
+			})
+			.state('modifypwd', {
+				url: '/modifypwd',
+				templateUrl: '/templates/modifypwd/modifypwd.html',
+				controller: 'modifypwdController',
+				resolve: {
+					des: ['$ocLazyLoad', function ($ocLazyLoad) {
+						return $ocLazyLoad.load('modifypwd');
 					}]
 				}
 			})

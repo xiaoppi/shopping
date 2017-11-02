@@ -18,13 +18,12 @@ angular.module('app')
 				});
 			},
 
-			fetchPut:function(url,params){
+			fetchPut: function (url, params) {
 				return $http({
 					url: url,
 					method: 'PUT',
 					params: params
 				});
-
 			}
 
 		};
