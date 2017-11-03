@@ -49,11 +49,11 @@ class RoutesController {
 					}
 					res.send(result);
 				} else {
-					res.send(common.login.warning);
+					res.send([common.login.warning]);
 				}
 			})
 			.catch((err) => {
-				res.send(common.login.error);
+				res.send([common.login.error]);
 			})
 	}
 
@@ -166,7 +166,9 @@ class RoutesController {
 	}
 
 	updatecommentController (req, res) {
+		console.log(req.body);
 		let commentsql = SQL.insertOneForComment(req.body);
+		console.log(commentsql);
 		service.query(commentsql)
 			.then((result) => {
 				res.json({"msg": "评论成功"});
@@ -238,6 +240,26 @@ class RoutesController {
 			.catch((err) => {
 				res.send(err);
 			})
+	}
+
+	sendSMSController (req, res) {
+		let time = new Date().getTime().toString();
+		let code = time.substr(time.length - 4, 4);
+		let smsOptions = {
+			PhoneNumbers: req.body.PhoneNumbers, //接收短信手机号
+		  SignName: 'ozil球迷APP', //短信签名
+		  TemplateCode: 'SMS_108970015', //短信模板代码
+		  TemplateParam: '{"code":"' + code + '"}'  //短信验证码
+		};
+
+		utils.sendSMS(smsOptions, function (s) {
+			let {code} = s;
+			if (code == 'OK') {
+				res.json({msg: '短信发送成功, 请注意查收'});
+			}
+		}, function (err) {
+			res.json({msg: '短信验证码获取失败'});
+		})
 	}
 
 }
